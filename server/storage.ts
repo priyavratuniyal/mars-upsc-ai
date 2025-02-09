@@ -38,9 +38,7 @@ export class InMemoryStorage implements IStorage {
   async createUser(insertUser: InsertUser): Promise<User> {
     const user: User = {
       id: this.nextUserId++,
-      ...insertUser,
-      createdAt: new Date(),
-      updatedAt: new Date()
+      ...insertUser
     };
     this.users.push(user);
     return user;
@@ -49,6 +47,7 @@ export class InMemoryStorage implements IStorage {
   async getAnswersByUserId(userId: number): Promise<Answer[]> {
     return this.answers.filter(a => a.userId === userId);
   }
+
 
   async createAnswer(
     answer: InsertAnswer & {
@@ -59,9 +58,12 @@ export class InMemoryStorage implements IStorage {
   ): Promise<Answer> {
     const newAnswer: Answer = {
       id: this.nextAnswerId++,
+      userId: answer.userId ?? null, // Ensure userId is explicitly set to null if undefined
       ...answer,
+      evaluation: answer.evaluation || null,
+      score: answer.score || null,
+      feedback: answer.feedback || null,
       createdAt: new Date(),
-      updatedAt: new Date()
     };
     this.answers.push(newAnswer);
     return newAnswer;

@@ -69,8 +69,8 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  const PORT = process.env.PORT || 5000; // Changed from 5000 to 3000, can be overridden by PORT environment variable
-  server.listen(PORT, "0.0.0.0", () => {
+  const PORT = parseInt(process.env.PORT || "5000", 10);
+  server.listen(PORT, () => {
     log(`serving on port ${PORT}`);
   });
 })();
