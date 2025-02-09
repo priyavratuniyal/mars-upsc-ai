@@ -1,0 +1,9 @@
+{
+  "variant": "professional",
+  "primary": "hsl(222.2 47.4% 11.2%)",
+  "appearance": "light",
+  "radius": 1.5,
+  "font": {
+    "sans": ["Bricolage Grotesque", "Inter", "system-ui", "sans-serif"]
+  }
+}
