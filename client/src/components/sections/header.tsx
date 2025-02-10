@@ -55,8 +55,8 @@ export default function Header() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-4">
               <Link href="/about">
-                <a className="text-muted-foreground hover:text-primary transition-colors">
-                  About
+                <a className="flex items-center gap-2 text-yellow-500 hover:text-yellow-400 transition-colors">
+                  <span>About Us</span>
                 </a>
               </Link>
               <Button

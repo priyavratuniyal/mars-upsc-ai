@@ -11,7 +11,7 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen bg-paper relative">
       <Button
         variant="ghost"
         size="icon"
@@ -26,15 +26,24 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto prose prose-lg prose-headings:font-heading"
+          className="max-w-4xl mx-auto prose prose-lg prose-headings:font-heading font-sans"
         >
-          <div className="flex flex-col mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold font-heading flex items-center gap-3 mb-2">
+          <div className="flex flex-col mb-2">
+            <h1 className="text-4xl md:text-5xl font-bold font-heading flex items-center gap-3 mb-0">
               About Us <span className="text-primary">🛡️</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground">(We were aspirants once)</p>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-2">(We were aspirants once)</p>
           </div>
-          
+          <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6">From Aspirants to Builders: The Story Behind MARS</h2>
+            <p className="leading-relaxed">
+            Like many others, we once sat with stacks of books, chasing the UPSC dream. We spent years immersed in polity, history, and ethics—shaping ourselves for a future in governance.<br/><br/>
+            But somewhere in the middle of all those long study sessions, something unexpected happened.<br/><br/>
+            We realized that while we respected the path, we weren’t truly in love with it. What really set our minds on fire was something else entirely—technology, problem-solving, and building things that could create impact beyond just ourselves.<br/><br/>
+            The decision to step away from the UPSC grind wasn’t easy. It felt like leaving behind a battle we had trained for. But once we made that choice, we knew it was the right one. With technology, we could solve real problems in real time. We could build, experiment, and create something that wasn’t just a theoretical answer on paper, but a real solution that could change the way aspirants learn and improve.<br/><br/>
+            That’s how MARS was born. We knew the struggles of aspirants firsthand—the frustration of vague feedback, the guesswork of improvement, the sheer loneliness of self-study. And we wanted to fix it with something that felt like a mentor, not just a tool.<br/><br/>
+            MARS is more than just an answer evaluation system. It’s our way of bringing tech into a space that desperately needs innovation. It’s proof that sometimes, the right path isn’t the one you first set out on—but the one that truly makes you come alive.</p>
+          </section>
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-6">The Problem: UPSC Mains Answer Writing is Hard</h2>
             <p className="text-lg text-muted-foreground mb-8">
@@ -111,13 +120,13 @@ export default function About() {
               Try MARS. Tell us what sucks. Help us make it better. We're all in this together.
             </p>
             <div className="space-y-3">
-              <p className="text-lg">Email: <a href="mailto:support@marsai.in" className="text-primary hover:underline">support@marsai.in</a></p>
-              <p className="text-lg">Twitter: <a href="https://twitter.com/mars_ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@mars_ai</a></p>
+              <p className="text-lg">Email: <a href="mailto:hello@marsupsc.in" className="text-primary hover:underline">hello@marsupsc.in</a></p>
+              <p className="text-lg">Twitter: <a href="https://twitter.com/marsupsc" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@marsupsc</a></p>
             </div>
           </section>
 
           <section className="mb-16">
-            <p className="text-xl font-bold mb-6">*MARS: Mains Answer Review System</p>
+            <p className="text-xl mb-6">*MARS: Mains Answer Review System</p>
           </section>
         </motion.div>
       </main>
