@@ -35,13 +35,13 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-32 px-4">
+    <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mx-auto mb-20">
+        <div className="max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-sm font-medium text-primary mb-2 block"
+            className="text-sm font-medium text-primary mb-2 block text-center"
           >
             {/* Key Features */}
           </motion.span>
@@ -49,39 +49,32 @@ export default function Features() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold mb-4 font-heading"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4"
           >
-            Your Complete UPSC Answer Writing Companion
+            Everything you need to excel in UPSC Mains
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl text-muted-foreground"
+            className="text-lg sm:text-xl text-muted-foreground text-center"
           >
-            Master the art of UPSC answer writing with our comprehensive AI-powered platform that provides detailed analysis and personalized feedback.
+            Comprehensive tools and features designed to enhance your UPSC Mains preparation
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
           {features.map((feature, index) => (
             <motion.div
-              key={index}
+              key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-start p-6 rounded-xl bg-card hover:bg-accent/5 transition-colors"
+              className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="text-primary bg-primary/5 p-3 rounded-lg mb-6">
-                <span className="text-4xl">{feature.icon}</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 font-heading">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-3">{feature.title}</h3>
+              <p className="text-base sm:text-lg text-muted-foreground">{feature.description}</p>
             </motion.div>
           ))}
         </div>
