@@ -21,30 +21,36 @@ export function WiggleButton({ children, className, initialDelay = 0, ...props }
 
   return (
     <motion.div
-      initial={{ scale: 1 }}
+      initial={{ scale: 1, rotate: 0 }}
       animate={!hasAnimated ? {
         rotate: [0, -3, 3, -2, 2, 0],
         scale: [1, 1.02, 1],
-      } : {}}
-      transition={!hasAnimated ? {
+      } : {
+        rotate: 0,
+        scale: 1
+      }}
+      transition={{
         duration: 1,
         delay: initialDelay,
         times: [0, 0.2, 0.4, 0.6, 0.8, 1],
         ease: "easeInOut",
-      } : {}}
-      className="relative"
+      }}
+      className="relative inline-block"
     >
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, scale: 1 }}
         animate={!hasAnimated ? {
           opacity: [0, 0.5, 0],
           scale: [1, 1.05, 1],
-        } : {}}
-        transition={!hasAnimated ? {
+        } : {
+          opacity: 0,
+          scale: 1
+        }}
+        transition={{
           duration: 1,
           delay: initialDelay,
           ease: "easeInOut",
-        } : {}}
+        }}
         className="absolute inset-0 rounded-full bg-primary/50 blur-lg"
       />
       <Button className={cn("relative", className)} {...props}>

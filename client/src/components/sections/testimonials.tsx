@@ -49,13 +49,13 @@ const fadeInVariants = {
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-primary/5">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 font-heading">
+    <section className="py-16 sm:py-20 md:py-24 bg-primary/5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-10 md:mb-12 font-heading">
           What Our Users Say
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto mb-12 sm:mb-16">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -66,13 +66,13 @@ export default function Testimonials() {
               custom={index}
             >
               <Card className="h-full transform transition-all duration-300 hover:shadow-xl">
-                <CardContent className="p-6">
-                  <p className="text-lg mb-4 italic text-muted-foreground">
+                <CardContent className="p-4 sm:p-6">
+                  <p className="text-base sm:text-lg mb-3 sm:mb-4 italic text-muted-foreground leading-relaxed">
                     "{testimonial.quote}"
                   </p>
                   <div>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="font-semibold text-sm sm:text-base">{testimonial.author}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">
                       {testimonial.role}
                     </p>
                   </div>
@@ -82,7 +82,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-sm sm:max-w-2xl mx-auto text-center">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -92,8 +92,8 @@ export default function Testimonials() {
               variants={fadeInVariants}
               custom={index + testimonials.length}
             >
-              <h3 className="text-4xl font-bold mb-2 font-heading">{stat.value}</h3>
-              <p className="text-muted-foreground">{stat.label}</p>
+              <h3 className="text-3xl sm:text-4xl font-bold mb-1 sm:mb-2 font-heading">{stat.value}</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">{stat.label}</p>
             </motion.div>
           ))}
         </div>

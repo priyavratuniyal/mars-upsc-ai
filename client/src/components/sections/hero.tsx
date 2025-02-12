@@ -4,7 +4,15 @@ import { motion } from "framer-motion";
 import { MousePointerClick, PenSquare, BookOpen, Newspaper, FileCheck, Brain } from "lucide-react";
 import { signInWithGoogle } from "@/lib/firebase";
 
-const FloatingObject = ({ children, className = "", delay = 0, x = 0, y = 0 }) => (
+interface FloatingObjectProps {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+  x?: number;
+  y?: number;
+}
+
+const FloatingObject = ({ children, className = "", delay = 0, x = 0, y = 0 }: FloatingObjectProps) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.5 }}
     animate={{ opacity: 0.15, scale: 1 }}
@@ -13,7 +21,7 @@ const FloatingObject = ({ children, className = "", delay = 0, x = 0, y = 0 }) =
       duration: 0.8,
       ease: "easeOut"
     }}
-    className={`absolute hidden sm:block ${className}`}
+    className={`absolute hidden sm:block opacity-10 sm:opacity-15 ${className}`}
   >
     <motion.div
       animate={{
@@ -39,7 +47,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-8 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Objects - Title Area */}
       <FloatingObject className="top-[20%] left-[20%]" delay={0.2} y={-20} x={10}>
         <PenSquare className="w-12 h-12 md:w-16 md:h-16" />
@@ -89,28 +97,28 @@ export default function Hero() {
         className="max-w-3xl mx-auto w-full relative z-10"
       >
         <h1 className="mb-6">
-          <span className="block text-4xl sm:text-5xl md:text-7xl font-bold text-black font-heading">
+          <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-black font-heading">
           🤖 AI-Powered
           </span>
-          <span className="block text-4xl sm:text-5xl md:text-7xl font-bold text-yellow-500 font-heading mt-2">
+          <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-yellow-500 font-heading mt-2">
             UPSC Mains
           </span>
-          <span className="block text-4xl sm:text-5xl md:text-7xl font-bold text-black font-heading mt-2">
+          <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-black font-heading mt-2">
             Answer Evaluation
           </span>
-          <span className="block text-xl sm:text-2xl md:text-4xl font-medium mt-6 md:mt-8 text-black font-heading">
+          <span className="block text-lg sm:text-xl md:text-2xl lg:text-4xl font-medium mt-4 sm:mt-6 lg:mt-8 text-black font-heading">
             ⚡ Instant Feedback. Improve Faster.
           </span>
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 lg:mb-12 text-muted-foreground leading-relaxed max-w-2xl mx-auto px-2">
           Upload your answer, get AI-driven insights, and improve faster. No waiting. No bias. Just better answers.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xl mx-auto px-4 sm:px-0">
           <WiggleButton 
             onClick={handleTelegramJoin}
             size="lg" 
             initialDelay={1.5}
-            className="bg-primary hover:bg-primary/90 text-white text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-full w-[200px] sm:w-auto"
+            className="bg-primary hover:bg-primary/90 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 rounded-full w-full sm:w-auto"
           >
             Join Telegram Waitlist
           </WiggleButton>
@@ -118,7 +126,7 @@ export default function Hero() {
             variant="outline"
             size="lg"
             onClick={signInWithGoogle}
-            className="font-medium text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 rounded-full w-[200px] sm:w-auto border-2 border-black hover:bg-black hover:text-white transition-colors"
+            className="font-medium text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 rounded-full w-full sm:w-auto border-2 border-black hover:bg-black hover:text-white transition-colors"
           >
             Login
           </Button>

@@ -1,6 +1,6 @@
 import { WiggleButton } from "@/components/ui/wiggle-button";
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { Send } from "lucide-react";
 
 export default function Join() {
   const handleTelegramJoin = () => {
@@ -20,7 +20,7 @@ export default function Join() {
           🤝 Join Our Community
         </h2>
         <p className="text-lg text-muted-foreground mb-8">
-          ✨ Get early access and updates by joining our Telegram group 💬
+          ✨ Get early access and updates by joining our Telegram group ✨
         </p>
         <WiggleButton 
           onClick={handleTelegramJoin}
@@ -28,8 +28,8 @@ export default function Join() {
           initialDelay={0.5}
           className="bg-primary hover:bg-primary/90 text-white font-medium rounded-full h-12 px-8"
         >
-          <MessageCircle className="w-5 h-5 mr-2" />
-          Join Telegram
+          <Send className="w-5 h-5 mr-2" />
+          Join Telegram Waitlist
         </WiggleButton>
       </motion.div>
     </section>
